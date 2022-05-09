@@ -1,4 +1,6 @@
-import sys, requests
+import requests
+import sys
+
 from PyQt5.QtWidgets import QApplication, QPushButton, QWidget, QTextEdit
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtWidgets import QStatusBar
@@ -24,6 +26,7 @@ class Window(QMainWindow):
     def _createLayout(self):
         self.generalLayout = QVBoxLayout()
         self.priceText = QTextEdit()
+        self.priceText.setReadOnly(True)
         self.btn = QPushButton('Get Price')
         self.btnClear = QPushButton('Clear')
         self.btnClear.clicked.connect(self._btnClearClicked)
